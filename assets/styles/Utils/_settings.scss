@@ -1,0 +1,21 @@
+
+
+//*** VARIABLES***///
+
+$color1:rgb(161, 17, 41);
+$color2:rgb(241, 206, 141);
+$color3:rgb(22,22,22);
+
+$font1: font1, sans-serif;
+
+//*** MIXINS***///
+
+@mixin center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+

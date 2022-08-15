@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/*Le Fichier index.scss sert à rassembler tous les fichiers SASS
+*/
+@font-face {
+  font-family: "font1";
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+body {
+  background-color: rgb(241, 206, 141);
+  font-family: font1, sans-serif;
+}
+
+nav {
+  background: rgb(161, 17, 41);
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+h1::after {
+  content: "*";
+  position: absolute;
+  transform: translateY(-6px);
+  color: rgb(161, 17, 41);
+}
+h1:hover::after {
+  font-size: 2em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1px;
+}
+section h2 {
+  margin-top: 50px;
+}
+
+.block {
+  width: 50%;
+  margin: 0 auto;
+}
+.block__element {
+  background-color: aqua;
+  text-align: center;
+  height: 50px;
+}
+.block__element--modifier {
+  background-color: pink;
+  height: 25px;
+}
+
+.insertcode {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=index.css.map */

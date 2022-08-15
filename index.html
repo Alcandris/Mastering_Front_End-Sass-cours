@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Sass</li>
+        <li>Css</li>
+        <li>Html</li>
+      </ul>
+    </nav>
+
+    <h1>Cours Sass</h1>
+
+    <section>
+      <h2>BEM</h2>
+      <ul>
+        <li>
+          BEM signifie bloc, élément, modificateur :
+          <ul>
+            <li>les blocs sont des bouts de code autonomes ;</li>
+            <li>les éléments sont les parties qui forment le bloc ;</li>
+            <li>
+              les modificateurs changent l’apparence ou le comportement d’un
+              bloc ou d’un élément.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Les blocs sont nommés en fonction de leur rôle :
+          <ul>
+            <li>
+              les éléments indiquent le nom de leur bloc parent, suivi d’un
+              double underscore/dunder (__) puis du rôle de l’élément :
+              form__label.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Les modificateurs utilisent le nom du bloc ou de l’élément qu’ils
+          modifient, suivi de deux tirets (--) et de ce que le sélecteur modifie
+          : button--green.
+        </li>
+        <li>
+          Vous n’avez pas besoin d’attribuer à chaque élément d’une page web un
+          sélecteur de classe. Vous pouvez utiliser les sélecteurs pour que
+          votre code HTML soit plus propre et concis.
+        </li>
+      </ul>
+
+      <div class="insertcode">
+        <pre>
+          SCSS
+          .block{ 
+            width: 50%; 
+            margin: 0 auto; 
+            &__element{ 
+              background-color: aqua;
+              &--modifier{ 
+                background-color: pink; 
+              } 
+            } 
+          }
+        </pre>
+        <pre>
+          CSS
+          .block {
+            width: 50%;
+            margin: 0 auto;
+          }
+          
+          .block__element {
+            background-color: aqua;
+          }
+          
+          .block__element--modifier {
+            background-color: pink;
+          }
+        </pre>
+      </div>
+
+      <div class="block">
+        <div class="block__element">block__element</div>
+        <div class="block__element">block__element</div>
+        <div class="block__element block__element--modifier">
+          block__element + block__element--modifier
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Dossiers</h2>
+      <p>
+        1-Base : contient les fichiers qui définissent les fondations de votre
+        site, par exemple la police de caractères et les normes que vous voulez
+        appliquer sur tout votre site, telles que le box-sizing 2-Utils :
+        variables, fonctions, mixins et les %placeholders pour les extensions
+      </p>
+      <p>
+        2-Utils : variables, fonctions, mixins et les %placeholders pour les
+        extensions
+      </p>
+      <p>
+        3-Layout (mise en page) : dossier où vous mettez vos blocs BEM qui
+        contiennent ce qui est réutilisable, par exemple un header pour les
+        mises en page de grande taille ou un footer
+      </p>
+      <p>
+        4-Components : est utilisé pour ranger les blocs BEM qui sont plus
+        indépendants, comme les boutons.
+      </p>
+
+      <p>
+        5-Pages : contient les blocs de code qui ne s’appliquent qu’à une seule
+        page. Vous utilisez des boutons dans tout votre site, en revanche votre
+        page d’accueil comporte une section Citation et une grille de projets
+        qui ne sont employés nulle part ailleurs. En d’autres termes, pages/
+        contient des règles spécifiques à une seule page qui ne seront pas
+        réutilisées ailleurs ;
+      </p>
+      <p>
+        6-Themes : c’est ici que vous stockez le code thématique, par exemple un
+        style customisé pour Noël ou pour l’été
+      </p>
+      <p>
+        7-Vendors (tiers) : est un directory pour des feuilles de style externes
+        comme Bootstrap ou jQuery UI. En gros, il s’utilise pour tout CSS venant
+        de l’extérieur
+      </p>
+      <p>
+        D’une manière générale, pour éviter les erreurs, faites en sorte
+        d’importer vos fichiers dans l’ordre suivant :
+      </p>
+
+      <ul>
+        <li>
+          Utils :
+          <ul>
+            <li>Variables.</li>
+            <li>Fonctions.</li>
+            <li>Mixins.</li>
+            <li>Placeholders.</li>
+          </ul>
+        </li>
+        <li>Feuilles de style de tiers (vendors) (si vous en avez)</li>
+        <li>Base.</li>
+        <li>Composants.</li>
+        <li>Pages</li>
+        <li>Thèmes.</li>
+      </ul>
+    </section>
+  </body>
+</html>
